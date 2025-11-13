@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
     private inner class ImageLabelAnalyzer : ImageAnalysis.Analyzer {
         private val labeler = ImageLabeling.getClient(ImageLabelerOptions.DEFAULT_OPTIONS)
 
-        @androidx.camera.core.ExperimentalGetImage
+        @androidx.annotation.OptIn(androidx.camera.core.ExperimentalGetImage::class)
         override fun analyze(imageProxy: ImageProxy) {
             val mediaImage = imageProxy.image
             if (mediaImage != null) {
